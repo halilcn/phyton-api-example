@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+            integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
+            integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
+            crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="src/tarla-io.css">
+    <script src="src/tarla-io.js"></script>
+
+</head>
+
+<script>
+    axios.defaults.headers['Content-Type'] = 'application/json';
+    axios.defaults.baseURL = 'http://127.0.0.1:5000/api';
+
+    function getData() {
+        axios.get('/data')
+            .then(res => {
+                res.data.forEach(data => {
+                    console.log(data);
+                });
+            })
+            .catch(err => {
+                alert('Bir hata oluştu.');
+            });
+    }
+
+    function postEdit(index) {
+
+    }
+
+    function postDelete(index) {
+        axios.delete(`/data/delete/${index}`, )
+            .then(res => {
+                console.log(res);
+            })
+            .catch(err => {
+                console.log(err);
+            });
+    }
+
+    //First Data
+    window.onload = () => {
+        getData();
+    }
+
+</script>
+<body>
+<div class="page-container">
+    <ul class="data-input-content">
+        <li>
+            <input type="text" name="" placeholder="latitude">
+        </li>
+        <li>
+            <input type="text" name="" placeholder="longitude">
+        </li>
+        <li>
+            <input type="text" name="" placeholder="name">
+        </li>
+        <li>
+            <div class="send-button">
+                Submit
+            </div>
+        </li>
+    </ul>
+    <ul class="data-list-content">
+        <li class="title">
+            <div>
+                point-name
+            </div>
+            <div>
+                point-latitude
+            </div>
+            <div>
+                point-longitude
+            </div>
+        </li>
+        <li class="data">
+            <div class="point-name">
+                veri1
+            </div>
+            <div class="point-longitude">
+                veri1
+            </div>
+            <div class="point-longitude">
+                veri1
+            </div>
+            <div class="button">
+                edit
+            </div>
+            <div class="button">
+                delete
+            </div>
+            <div class="button">
+                Map It
+            </div>
+            <div class="button">
+                Temperature
+            </div>
+        </li>
+        <li class="data">
+            <div class="point-name">
+                veri2
+            </div>
+            <div class="point-longitude">
+                veri2
+            </div>
+            <div class="point-longitude">
+                veri2
+            </div>
+            <div onclick="postEdit('0')" class="button">
+                edit
+            </div>
+            <div onclick="postDelete('1')" class="button">
+                delete
+            </div>
+            <div onclick="mapIt()" class="button">
+                Map It
+            </div>
+            <div onclick="Temperature" class="button">
+                Temperature
+            </div>
+        </li>
+    </ul>
+</div>
+</body>
+</html>

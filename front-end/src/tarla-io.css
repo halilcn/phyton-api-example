@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400;500&display=swap');
+
+
+body {
+    margin: 0;
+}
+
+* {
+    box-sizing: border-box;
+
+}
+
+*:focus {
+    outline: none;
+}
+
+.page-container {
+    padding: 50px 100px;
+}
+
+.data-input-content {
+    list-style: none;
+    padding: 14px 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border: 1px solid #efefef;
+    border-radius: 3px;
+    box-shadow: 0 0.2px 0.5px rgba(0, 0, 0, 0.014),
+    0 0.4px 1.3px rgba(0, 0, 0, 0.02),
+    0 0.8px 2.4px rgba(0, 0, 0, 0.025),
+    0 1.3px 4.2px rgba(0, 0, 0, 0.03),
+    0 2.5px 7.9px rgba(0, 0, 0, 0.036),
+    0 6px 19px rgba(0, 0, 0, 0.05);
+}
+
+.data-input-content > li {
+    margin: 0 10px;
+}
+
+.data-input-content > li > input {
+    padding: 7px 12px;
+    border: 1px solid #b4becb;
+    border-radius: 3px;
+    font-family: 'Montserrat Alternates', sans-serif;
+    font-weight: 500;
+    color: black;
+    transition: .3s;
+}
+
+.data-input-content > li > input:focus {
+    border-color: #9ba5b3;
+    transform: scale(1.02);
+}
+
+.data-input-content > li > .send-button {
+    padding: 7px 20px;
+    background-color: #148c14;
+    color: white;
+    font-family: 'Montserrat Alternates', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.data-input-content > li > .send-button:hover {
+    background-color: #157c15;
+}
+
+.data-list-content {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    width: 800px;
+    margin-top: 50px;
+}
+
+.data-list-content > li {
+    display: flex;
+    justify-content: flex-start;
+    padding: 10px 10px;
+}
+
+.data-list-content > li > div {
+    width: 100px;
+    text-align: center;
+}
+
+.data-list-content > .title {
+    font-family: 'Montserrat Alternates', sans-serif;
+    font-weight: 500;
+    font-size: 12px;
+    background-color: #efefef;
+    border-radius: 3px;
+}
+
+.data-list-content > .data {
+    font-family: 'Montserrat Alternates', sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    margin-top: 5px;
+    border: 1px solid #e7e7e7;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+}
+
+.data-list-content > .data > .button {
+    background-color: #edf5ff;
+    padding: 5px 0;
+    cursor: pointer;
+    border-radius: 3px;
+    margin-right: 3px;
+}
+.data-list-content > .data > .button:hover{
+    background-color: #e6f2ff;
+}
