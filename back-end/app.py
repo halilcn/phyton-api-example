@@ -13,9 +13,11 @@ data = [{
     'point_longitude': '160.01'
 }]
 
+
 @app.route('/api/data', methods=['GET'])
 def returnData():
     return jsonify(data)
+
 
 @app.route('/api/data', methods=['POST'])
 def setData():
@@ -27,19 +29,21 @@ def setData():
     })
     return jsonify({'status': 'true'}), 201
 
-@app.route('/api/data/<string:index>', methods=['DELETE'])
+
+@app.route('/api/data/<int:index>', methods=['DELETE'])
 def deleteData(index):
-    if data.pop(int(index)):
+    if data.pop(index):
         return jsonify({'status': 'true'})
     else:
         return jsonify({'status': 'false'}), 400
 
-@app.route('/api/data/<string:index>', methods=['PUT'])
+
+@app.route('/api/data/<int:index>', methods=['PUT'])
 def updateData(index):
     requestData = request.get_json()
-    data[int(index)]['point_name'] = requestData['point_name']
-    data[int(index)]['point_latitude'] = requestData['point_latitude']
-    data[int(index)]['point_longitude'] = requestData['point_longitude']
+    data[index]['point_name'] = requestData['point_name']
+    data[index]['point_latitude'] = requestData['point_latitude']
+    data[index]['point_longitude'] = requestData['point_longitude']
     return jsonify({'status': 'true'})
 
 
